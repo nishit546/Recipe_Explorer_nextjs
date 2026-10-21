@@ -4,15 +4,7 @@ import { useState } from "react";
 export default function Checklist({ items }: { items: string[] }) {
   const [done, setDone] = useState<Set<number>>(new Set());
   const toggle = (i: number) =>
-    setDone((p) => {
-      const n = new Set(p);
-      if (n.has(i)) {
-        n.delete(i);
-      } else {
-        n.add(i);
-      }
-      return n;
-    });
+    setDone((p) => { const n = new Set(p); n.has(i) ? n.delete(i) : n.add(i); return n; });
   return (
     <ul className="checks">
       {items.map((t, i) => (
