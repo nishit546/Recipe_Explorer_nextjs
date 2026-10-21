@@ -19,13 +19,13 @@ export type CuisineInfo = {
 };
 
 export const cuisineMeta: Record<string, { emoji: string; description: string }> = {
-  "Asian": { emoji: "🥢", description: "Vibrant stir-fries, umami broths, and fresh aromatics." },
-  "Mediterranean": { emoji: "🫒", description: "Sun-ripened produce, olive oils, and wholesome bakes." },
-  "European": { emoji: "🌿", description: "Classic roasts, aromatic herbs, and time-tested comfort food." },
-  "Indian": { emoji: "🌶️", description: "Fragrant spices, rich dals, and slow-tempered aromatics." },
+  "Asian": { emoji: "🥢", description: "Vibrant stir-fries, umami broths,  fresh aromatics." },
+  "Mediterranean": { emoji: "🫒", description: "Sun-ripened produce, olive oils,  wholesome bakes." },
+  "European": { emoji: "🌿", description: "Classic roasts, aromatic herbs,  time-tested comfort food." },
+  "Indian": { emoji: "🌶️", description: "Fragrant spices, rich dals,  slow-tempered aromatics." },
   "Italian": { emoji: "🍕", description: "Artisanal breads, simple quality ingredients, and rustic flavors." },
-  "Latin American": { emoji: "🥑", description: "Smoky chipotles, hearty beans, and zesty citrus." },
-  "Middle Eastern": { emoji: "🧆", description: "Nutty tahini, roasted spices, and fresh herb blends." },
+  "Latin American": { emoji: "🥑", description: "Smoky chipotles, hearty beans,  zesty citrus." },
+  "Middle Eastern": { emoji: "🧆", description: "Nutty tahini, roasted spices,  fresh herb blends." },
 };
 
 export const recipes: Recipe[] = [
