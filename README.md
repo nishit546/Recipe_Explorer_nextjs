@@ -1,36 +1,92 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Recipe Explorer 🍳
 
-## Getting Started
+A modern, responsive Recipe Explorer web application built with **Next.js 15+ (App Router)**, **TypeScript**, and modern CSS.
 
-First, run the development server:
+Browse everyday dishes, filter by regional cuisines, search ingredients, sort by preparation time, and follow interactive cooking checklists.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## ✨ Features
+
+- **🔍 Search & Filtering**: Instant search across recipe titles and ingredients with cuisine chips and query persistence via URL search parameters.
+- **⏱️ Smart Sorting**: Sort recipes by recent addition, quickest preparation time, or alphabetically.
+- **🏷️ Regional Cuisines**: Explore dedicated cuisine landing pages (`/cuisines`) and individual cuisine hubs (`/cuisines/[cuisine]`) with average prep times and recipe counts.
+- **📖 Dynamic Recipe Details**: Rich detail views (`/recipes/[id]`) featuring difficulty ratings, serving sizes, tone color cards, and recommended related recipes.
+- **✅ Interactive Cooking Checklist**: Stateful client-side checklist component allowing users to cross off ingredients as they cook.
+- **⚡ Static Site Generation (SSG)**: Fast static generation using `generateStaticParams` for cuisines and recipes, combined with dynamic search and metadata generation (`generateMetadata`).
+- **🎨 Responsive UI**: Custom CSS design system with breadcrumb navigation, badges, grids, and clean cards.
+- **🚫 Custom 404 Page**: Graceful error handling with suggested recipes and recovery actions.
+
+---
+
+## 📁 Project Structure
+
+```
+recipe_explorer/
+├── src/
+│   ├── app/
+│   │   ├── cuisines/
+│   │   │   ├── [cuisine]/page.tsx   # Individual cuisine page
+│   │   │   └── page.tsx             # Cuisines listing page
+│   │   ├── recipes/
+│   │   │   ├── [id]/page.tsx        # Recipe detail page
+│   │   │   └── page.tsx             # Recipe catalog with search/filter
+│   │   ├── favicon.ico
+│   │   ├── globals.css              # Global styles & design tokens
+│   │   ├── layout.tsx               # Root layout with Header and Footer
+│   │   ├── not-found.tsx            # Custom 404 error page
+│   │   └── page.tsx                 # Root redirect to /recipes
+│   ├── components/
+│   │   ├── Checklist.tsx            # Interactive ingredient checklist
+│   │   └── ui.tsx                   # UI components (Header, Footer, RecipeCard, Crumbs)
+│   └── lib/
+│       └── recipes.ts               # Recipe datasets, types, and helper utilities
+├── public/                          # Static assets and icons
+├── next.config.ts                   # Next.js configuration
+├── package.json                     # Project dependencies and scripts
+└── tsconfig.json                    # TypeScript configuration
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Getting Started
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Prerequisites
 
-## Learn More
+- [Node.js](https://nodejs.org/) (v18.18.0 or newer recommended)
+- `npm`, `pnpm`, or `yarn`
 
-To learn more about Next.js, take a look at the following resources:
+### Installation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/nishit546/Recipe_Explorer_nextjs.git
+   cd Recipe_Explorer_nextjs
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-## Deploy on Vercel
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to explore the app.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🛠️ Scripts
+
+- `npm run dev` - Starts the local development server with Turbopack.
+- `npm run build` - Generates an optimized production build.
+- `npm run start` - Runs the production server.
+- `npm run lint` - Runs ESLint code quality checks.
+
+---
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
